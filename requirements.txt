@@ -4,7 +4,7 @@ pandas
 streamlit-option-menu
 plotly
 numpy
-sklearn
+scikit-learn
 os
 wordcloud
 matplotlib
