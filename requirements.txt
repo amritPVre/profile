@@ -4,7 +4,6 @@ pandas
 streamlit-option-menu
 plotly
 numpy
-time
 sklearn
 os
 wordcloud
