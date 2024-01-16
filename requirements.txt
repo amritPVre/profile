@@ -5,7 +5,6 @@ streamlit-option-menu
 plotly
 numpy
 scikit-learn
-os
 wordcloud
 matplotlib
 openai
