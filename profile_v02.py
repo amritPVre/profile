@@ -1456,7 +1456,7 @@ def encode_image(image_path):
         return base64.b64encode(image_file.read()).decode('utf-8')
 
 # Skills to display and their corresponding image file names
-skills = ['PVsyst', 'AutoCAD', 'SketchUp', 'Helioscope', 'Python', 'PVlib']
+skills = ['PVsyst', 'AutoCAD', 'SketchUp', 'Helioscope', 'Python', 'pvlib']
 # Assume the image names are the same as the skill names
 image_folder = 'images'
 
@@ -1844,10 +1844,9 @@ components.html(brand_showcase_html, height=600) # Adjust height as necessary
 
 #----AI SKillset------#
 
-ai_intro=f""" Below are visual representations of my skills across various technical tools, 
-illustrated through a horizontal bar chart and a radar chart. 
-These charts reflect my expertise and proficiency levels in essential software tools like 
-PVsyst, AutoCAD, SketchUp, and more, highlighting my comprehensive skill set in the Solar energy sector.
+ai_intro=f""" Skilled in AI, I specialize in crafting advanced machine learning solutions,
+focusing on predictive analytics and natural language processing, 
+and turning complex challenges into practical, impactful applications.
 """
 components.html(app_css + create_section_header("Data Science and AI Skills Proficiency"), height=100)
 components.html(intro_css + create_section_intro(ai_intro)
@@ -2132,7 +2131,7 @@ with col2:
 
 
 
-openai.api_key = openai_api
+openai.api_key = 'openai_api'
 
 # Assuming the PDF file is named 'example.pdf' and is in the root directory of the app
 pdf_filename = 'About_me.pdf'
