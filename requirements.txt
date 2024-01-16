@@ -2,14 +2,13 @@ streamlit
 pydeck
 pandas
 streamlit-option-menu
-streamlit.components.v1
 base64
-plotly.graph_objects
+plotly
 numpy
 time
-sklearn.neighbors
+sklearn
 os
 wordcloud
-matplotlib.pyplot
+matplotlib
 openai
 pdfplumber
