@@ -1,0 +1,15 @@
+streamlit
+pydeck
+pandas
+streamlit_option_menu
+streamlit.components.v1
+base64
+plotly.graph_objects
+numpy
+time
+sklearn.neighbors
+os
+wordcloud
+matplotlib.pyplot
+openai
+pdfplumber
