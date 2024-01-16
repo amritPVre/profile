@@ -2,7 +2,6 @@ streamlit
 pydeck
 pandas
 streamlit-option-menu
-base64
 plotly
 numpy
 time
