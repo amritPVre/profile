@@ -2150,13 +2150,13 @@ context = extract_text_from_pdf(pdf_filename)
 
 # Streamlit interface
 with st.sidebar: 
-    st.title('Ask a Question About Me')
+    st.title('My AI Assistant')
     
     # Display the context in the app for user reference (optional)
     #st.text_area("Content of the PDF", context, height=300)
     
     # User query input
-    user_query = st.text_input("Ask a question based on my professional journey")
+    user_query = st.text_input("Ask a question about my career")
     
     # Displaying response
     if user_query:
