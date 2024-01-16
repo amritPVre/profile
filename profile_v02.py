@@ -41,10 +41,12 @@ st.set_page_config(
 with st.sidebar:
     selected = option_menu("Amrit Mandal", ["Home", 'LinkedIn'], 
         icons=['house', 'gear'], menu_icon="cast", default_index=0, orientation="vertical")
+    st.write('email: amrit.mandal0191@gmail.com')
+    st.write('Contact: +91 8116401052')
 
 # Example URLs
-home_url = "https://www.homepage.com"
-LinkedIn_url = "https://www.linkedin.com"
+home_url = "https://profile-amrit-mandal.streamlit.app/"
+LinkedIn_url = "https://www.linkedin.com/in/amritmandal/"
 
 # Display hyperlinks based on the selected menu item
 if selected == "Home":
@@ -1051,8 +1053,8 @@ with col2:
     create_card("AMPL Cleantech Pvt Ltd, India", "Assistant Manager - Design", 
             ["Directed solar project designs, assessments, and technical reports.",
              "Drove team performance in project execution and tendering.",
-             "Facilitated a $140M equity raise for a 214MWp Solar PV project.",
-             "Managed 10MW to 500MW projects with top-tier contractors."], header_color="#28A745")
+             "Facilitated a $140M equity raise for a 214MWp PV project.",
+             "Managed 10MW to 500MW projects with top contractors."], header_color="#28A745")
 
     st.write('\n')
     st.write('\n')    
