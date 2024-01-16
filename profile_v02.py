@@ -2132,7 +2132,7 @@ with col2:
 
 
 
-openai.api_key = 'openai_api'
+openai.api_key = openai_api
 
 # Assuming the PDF file is named 'example.pdf' and is in the root directory of the app
 pdf_filename = 'About_me.pdf'
