@@ -1240,7 +1240,7 @@ with col1:
 with col2:
     create_card("Annapurna Export", "Project Engineer", 
             ["Managed PV projects and solar-powered off-gird installations.",
-             "Deployed project teams, for efficient delivery across East India.",
+             "Deployed project teams, for efficient delivery across India.",
              "Led system designs and quality checks for government and residential projects.",
              "Boosted the company's execution capabilities in the solar sector."], header_color="#17A2B8")
 
