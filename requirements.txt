@@ -1,7 +1,7 @@
 streamlit
 pydeck
 pandas
-streamlit_option_menu
+streamlit-option-menu
 streamlit.components.v1
 base64
 plotly.graph_objects
