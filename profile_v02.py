@@ -57,6 +57,21 @@ st.title('Welcome Guest!')
 
 #-----End of App Layout Setting----#
 
+#---------------Responsive Css-----------#
+
+common_css = """
+<style>
+/* Your common CSS styles here */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    /* Styles for smaller screens */
+}
+</style>
+"""
+
+
+
 #-----Section Header CSS--------#
 
 # CSS for the entire app
@@ -84,6 +99,14 @@ app_css = """
         border-color: #0056b3;
         cursor: pointer;
     }
+
+    /* Responsive adjustments */
+@media (max-width: 768px) {{
+    .header-card {{
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }}
 
     /* Pseudo-elements for horizontal lines */
     .section-header:before, .section-header:after {
@@ -132,39 +155,60 @@ header_html = f"""
     padding: 20px;
     display: flex;
     align-items: center;
-    background-color: #ffffff; /* White background */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adding a subtle shadow */
-    border-radius: 15px; /* Rounded corners */
+    background-color: #ffffff; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
     width: 95%;
     margin: 10px auto;
-    transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition for hover effect */
+    transition: transform 0.3s, box-shadow 0.3s;
 }}
 
 .header-card:hover {{
-    transform: translateY(-10px); /* Slight lift on hover */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Increased shadow on hover */
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }}
 
 .profile-image {{
-    width: 150px; /* Adjusted profile image size */
+    width: 150px;
     height: 150px;
-    border-radius: 50%; /* Circular image */
+    border-radius: 50%;
     background-image: url("{image_base64}");
     background-size: cover;
-    margin-right: 20px; /* Spacing between image and text */
+    margin-right: 20px;
 }}
 
 .profile-text {{
     font-family: 'Open Sans', sans-serif;
-    font-size: 22px; /* Slightly larger font for name and title */
-    color: #333333; /* Darker text for better readability */
+    font-size: 22px;
+    color: #333333;
 }}
 
 .catchy-text {{
     font-family: 'Open Sans', sans-serif;
     font-size: 16px;
-    color: #666666; /* Keeping the text color subtle */
-    margin-top: 5px; /* Spacing for better layout */
+    color: #666666;
+    margin-top: 5px;
+}}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {{
+    .header-card {{
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }}
+    .profile-image {{
+        margin-bottom: 10px;
+        margin-right: 0;
+        width: 100px; /* Smaller image */
+        height: 100px;
+    }}
+    .profile-text {{
+        font-size: 18px; /* Smaller text */
+    }}
+    .catchy-text {{
+        font-size: 14px;
+    }}
 }}
 </style>
 
@@ -177,11 +221,11 @@ header_html = f"""
         <div class="catchy-text">PV | BESS | AI | ML</div>
     </div>
 </div>
-
 """
 
 # Render the custom HTML/CSS in the Streamlit app
-components.html(header_html, height=240)
+components.html(header_html, height=300)
+
 
 #--------Intro Section------#
 
@@ -204,6 +248,16 @@ intro_html = """
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
             font-family: Arial, sans-serif; /* Professional font */
         }
+
+            @media screen and (max-width: 768px) {
+        .intro-section {
+            padding: 10px;
+            font-size: 14px; /* Smaller font size for smaller screens */
+        }
+        .intro-section h2 {
+            font-size: 20px; /* Smaller heading for smaller screens */
+        }
+    }
 
         .intro-section h2 {
             color: #333333; /* Dark grey color for text */
@@ -229,7 +283,8 @@ intro_html = """
 </html>
 
 """
-components.html(intro_html, height=300)
+intro_css_html=intro_html+common_css
+components.html(intro_css_html, height=300)
 
 #------End of Intro Section------#
 
@@ -237,29 +292,46 @@ components.html(intro_html, height=300)
 
 intro_css="""
     <style>
+    .intro-section {
+        background-color: #f2f2f2;
+        border-left: 4px solid #007bff;
+        padding: 10px;
+        margin: 10px 0;
+        border-radius: 6px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        font-family: Arial, sans-serif;
+        font-style: italic;
+    }
+
+    .intro-section h2 {
+        color: #333333;
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+    .intro-section p {
+        color: #555555;
+        font-size: 16px;
+        line-height: 1.6;
+    }
+
+    /* Media query for smaller screens */
+    @media screen and (max-width: 768px) {
         .intro-section {
-            background-color: #f2f2f2; /* Light grey background */
-            border-left: 4px solid #007bff; /* Blue accent border */
-            padding: 10px;
-            margin: 10px 0;
-            border-radius: 6px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
-            font-family: Arial, sans-serif; /* Professional font */
-            font-style: italic;
+            padding: 5px; /* Smaller padding for smaller screens */
+            font-size: 14px; /* Smaller font size */
         }
 
         .intro-section h2 {
-            color: #333333; /* Dark grey color for text */
-            font-size: 24px; /* Slightly larger font for heading */
-            margin-bottom: 10px; /* Space below the heading */
+            font-size: 20px; /* Smaller heading for smaller screens */
         }
 
         .intro-section p {
-            color: #555555; /* Medium grey for paragraph */
-            font-size: 16px; /* Readable font size for paragraph */
-            line-height: 1.6; /* Spacing for line height */
+            font-size: 14px; /* Smaller paragraph font size */
         }
-    </style>
+    }
+</style>
+
     """
 
 def create_section_intro(intro):
@@ -274,7 +346,7 @@ def create_section_intro(intro):
 components.html(app_css + create_section_header("Global Impacts"), height=100)
 
 components.html(intro_css + create_section_intro("Showcasing a decade of dedication to sustainability, I've steered solar projects amounting to 383 MWp, successfully offsetting 2.25 million tons of CO2. My strategic management has also directed $289.3M in investments, fueling the growth of renewable energy on a global scale.")
-                                                 , height=150)
+                                                 , height=200)
 
 #-----MW of Projects Done-------#
 
@@ -514,6 +586,7 @@ gauge_chart_html = f"""
   margin-top: 15px; /* Space above the text */
   color: #333;
   text-align:center;
+  font-weight: bold; /* Make text bold */
 }}
 
 /* Hover effect for gauge needle */
@@ -584,6 +657,7 @@ gauge.set(gaugeValue); // Set the current value
 # Use Streamlit components to embed the HTML/JavaScript in the app
 with col2:
     components.html(gauge_chart_html, height=300)
+    #st.markdown(gauge_chart_html, unsafe_allow_html=True)
     
 
 #------End of Impact Section------#
@@ -597,7 +671,7 @@ projectmap_intro=f"""Spanning the globe from the bustling streets of India to th
 """
 components.html(app_css + create_section_header("Global Project Portfolio"), height=100)
 components.html(intro_css + create_section_intro(projectmap_intro)
-                                                 , height=150)
+                                                 , height=200)
 
 
 
@@ -699,7 +773,7 @@ emphasizing my commitment to renewable energy advancements.
 """
 components.html(app_css + create_section_header("Work Experience"), height=100)
 components.html(intro_css + create_section_intro(workexp_intro)
-                                                 , height=150)
+                                                 , height=200)
 
 
 # Custom styles for the timeline
@@ -708,7 +782,7 @@ timeline_style = """
 /* Timeline setup */
 .timeline {
     position: relative;
-    max-width: 960px; /* Adjust the max-width of the timeline */
+    max-width: 960px;
     margin: 0 auto;
 }
 
@@ -716,8 +790,8 @@ timeline_style = """
 .timeline::after {
     content: '';
     position: absolute;
-    width: 2px; /* Width of the central line */
-    background-color: #bdbdbd; /* Color of the central line */
+    width: 2px;
+    background-color: #bdbdbd;
     top: 0;
     bottom: 0;
     left: 50%;
@@ -730,7 +804,7 @@ timeline_style = """
     position: relative;
     width: 100%;
     display: flex;
-    justify-content: flex-end; /* Align containers to the center line */
+    justify-content: flex-end;
 }
 
 /* Container positioned on the left */
@@ -745,7 +819,7 @@ timeline_style = """
     position: relative;
     border-radius: 6px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    width: calc(50% - 40px); /* Half width minus padding */
+    width: calc(50% - 40px);
     margin: 10px 0;
 }
 
@@ -755,8 +829,8 @@ timeline_style = """
     position: absolute;
     width: 20px;
     height: 20px;
-    background-color: #FF9F55; /* Circle color */
-    border: 3px solid #FFFFFF; /* Circle border color */
+    background-color: #FF9F55;
+    border: 3px solid #FFFFFF;
     border-radius: 50%;
     top: 50%;
     transform: translateY(-50%);
@@ -796,29 +870,30 @@ timeline_style = """
 
 /* Add hover effect for the content */
 .content:hover {
-    transform: scale(1.03); /* Slightly increase the size */
-    box-shadow: 0 8px 16px rgba(0,0,0,0.2); /* Make the shadow deeper */
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth transition for the effect */
+    transform: scale(1.03);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 @media screen and (max-width: 600px) {
     /* Adjust styles for mobile */
+    .timeline::after {
+        left: 10px;
+        margin-left: 0;
+    }
+    .container {
+        display: block;
+    }
     .content {
-        width: calc(100% - 80px); /* Full width minus padding on mobile */
-        padding: 20px;
-    }
-    .container::before, .container::after {
-        left: 20px;
-        right: auto;
-    }
-    .left, .right {
-        justify-content: flex-start;
+        width: calc(100% - 40px); /* Adjust width for mobile */
+        margin: 10px 20px;
     }
     .left::before, .right::before {
         display: none;
     }
 }
 </style>
+
 """
 
 st.markdown(timeline_style, unsafe_allow_html=True)
@@ -1322,7 +1397,7 @@ edu_intro=f"""Welcome to my professional profile! I'm an Electrical Engineering 
 """
 components.html(app_css + create_section_header("Academic Qualification & Certifications"), height=100)
 components.html(intro_css + create_section_intro(edu_intro)
-                                                 , height=150)
+                                                 , height=200)
 
 education_html = """
 <style>
@@ -1442,7 +1517,7 @@ PVsyst, AutoCAD, SketchUp, and more, highlighting my comprehensive skill set in 
 """
 components.html(app_css + create_section_header("Software Skills Proficiency"), height=100)
 components.html(intro_css + create_section_intro(sw_intro)
-                                                 , height=120)
+                                                 , height=150)
 #----radar chart w/o prfecieny level and with logos------#
 
 
@@ -1847,7 +1922,7 @@ and turning complex challenges into practical, impactful applications.
 """
 components.html(app_css + create_section_header("Data Science and AI Skills Proficiency"), height=100)
 components.html(intro_css + create_section_intro(ai_intro)
-                                                 , height=120)
+                                                 , height=150)
 
 
 #----AI Skillset----#
