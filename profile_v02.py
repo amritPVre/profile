@@ -876,7 +876,7 @@ timeline_style = """
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
     /* Adjust styles for mobile */
     .timeline::after {
         left: 10px;
