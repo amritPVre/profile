@@ -34,6 +34,7 @@ st.set_page_config(
 #---Setting the sidebar menu-----#
 
 with st.sidebar:
+    st.write('For Best View,\n Switch to your Laptop/tablet Screen')
     selected = option_menu("Amrit Mandal", ["Home", 'LinkedIn'], 
         icons=['house', 'gear'], menu_icon="cast", default_index=0, orientation="vertical")
     st.write('email: amrit.mandal0191@gmail.com')
